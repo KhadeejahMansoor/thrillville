@@ -1,9 +1,10 @@
 <header style="
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: #2185d0;
-    padding: 10px 20px;
+    background-color: #2185d0; /* Dark blue background for header */
+    padding: 20px;
     color: white;
     font-family: 'Jost', sans-serif;">
   
@@ -12,14 +13,17 @@
       font-size: 2em;
       font-weight: bold;
       color: white;
-      text-decoration: none;">
+      text-decoration: none;
+      text-align: center;">
     WONDERLAND
   </a>
 
   <!-- Navigation Menu -->
   <div class="items" style="
       display: flex;
-      align-items: center;">
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;">
     <a href="index.php" style="
         margin: 0 15px;
         text-decoration: none;
@@ -55,71 +59,5 @@
         font-size: 1em;">
       Shop
     </a>
-
-    <!-- Cart Icon -->
-    <div class="nav-icon" style="
-        margin: 0 15px;">
-      <a href="cart.php" style="
-          text-decoration: none;
-          color: white;
-          font-size: 1.2em;">
-        <i class='bx bxs-cart'></i>
-      </a>
-    </div>
-
-    <!-- Profile Icon -->
-    <div class="profile-icon" style="
-        position: relative;
-        margin-left: 15px;">
-      <a href="#" style="
-          text-decoration: none;
-          color: white;
-          font-size: 1.2em;">
-        <i class="bx bxs-user"></i>
-      </a>
-      <!-- Dropdown Menu -->
-      <div class="profile-options" style="
-          display: none;
-          position: absolute;
-          top: 40px;
-          right: 0;
-          background-color: white;
-          color: #2185d0;
-          border-radius: 5px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          overflow: hidden;
-          z-index: 10;">
-        <a href="loginpage.php" style="
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #2185d0;
-            font-size: 1em;">
-          Login
-        </a>
-        <a href="signup.php" style="
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #2185d0;
-            font-size: 1em;">
-          Signup
-        </a>
-      </div>
-    </div>
   </div>
 </header>
-
-<script>
-  // Dropdown toggle logic for the profile icon
-  const profileIcon = document.querySelector('.profile-icon');
-  const profileOptions = document.querySelector('.profile-options');
-
-  profileIcon.addEventListener('mouseenter', () => {
-    profileOptions.style.display = 'block';
-  });
-
-  profileIcon.addEventListener('mouseleave', () => {
-    profileOptions.style.display = 'none';
-  });
-</script>
