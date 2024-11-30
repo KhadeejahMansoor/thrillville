@@ -7,9 +7,9 @@ use GuzzleHttp\Client;
 // Function to get the Authorization header for Cosmos DB requests
 function getAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey) {
     $key = base64_decode($masterKey);
-    $stringToSign = strtolower($verb) . "\n" .
-                    strtolower($resourceType) . "\n" .
-                    $resourceLink . "\n" .
+    $stringToSign = strtolower($verb) . "\n" . 
+                    strtolower($resourceType) . "\n" . 
+                    $resourceLink . "\n" . 
                     strtolower($date) . "\n\n";
 
     $hash = hash_hmac('sha256', $stringToSign, $key, true);
@@ -18,12 +18,13 @@ function getAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey) {
     return 'type=master&ver=1.0&sig=' . $signature;
 }
 
-// Cosmos DB connection details
-$uri = "https://wonderland.documents.azure.com:443/";
-$masterKey = "FYboYduDuC8WTxmSAX30xskFFTQSeKZYerby7hq6xY5l50E6iVEm2ZDMZoR9XVwKm5L8UTziyTfaACDbJhc1Xw==";
-$databaseId = "wonderland";
-$collectionId = "table";
+// Cosmos DB connection details from environment variables
+$uri = getenv('COSMOS_DB_ENDPOINT'); // Get the endpoint from environment variable
+$masterKey = getenv('COSMOS_DB_KEY'); // Get the master key from environment variable
+$databaseId = getenv('COSMOS_DB_DATABASE'); // Get the database ID from environment variable
+$collectionId = getenv('COSMOS_DB_COLLECTION'); // Get the collection ID from environment variable
 
+// Initialize the client with the base URI (Cosmos DB endpoint)
 $client = new Client([
     'base_uri' => $uri,
     'headers' => [
