@@ -1,4 +1,8 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Function to generate the Authorization header
 function generateAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey) {
     $key = base64_decode($masterKey); // Decode the primary key
@@ -14,8 +18,8 @@ function generateAuthHeader($verb, $resourceType, $resourceLink, $date, $masterK
 }
 
 // Cosmos DB configuration
-$endpoint = "https://<your-account>.documents.azure.com:443/";
-$primaryKey = "FYboYduDuC8WTxmSAX30xskFFTQSeKZYerby7hq6xY5l50E6iVEm2ZDMZoR9XVwKm5L8UTziyTfaACDbJhc1Xw==";
+$endpoint = "https://<your-account>.documents.azure.com:443/"; // Replace with your Cosmos DB endpoint
+$primaryKey = "<your-primary-key>"; // Replace with your primary key
 $databaseId = "wonderland";
 $containerId = "table";
 
@@ -36,18 +40,37 @@ $headers = [
     "Content-Type: application/json",
 ];
 
-// Make a cURL request
+// Make a cURL request to fetch documents
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $endpoint . "dbs/$databaseId/colls/$containerId/docs");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($ch);
+
+// Check for errors
 if ($response === false) {
-    echo "Error: " . curl_error($ch);
+    echo "Error: " . curl_error($ch); // Display cURL error
 } else {
-    echo "<h1>Data from Cosmos DB:</h1>";
+    $data = json_decode($response, true);
+
+    // Display the raw response
+    echo "<h1>Raw Response:</h1>";
     echo "<pre>" . htmlspecialchars($response) . "</pre>";
+
+    // Display parsed data
+    echo "<h1>Data from Cosmos DB:</h1>";
+    echo "<pre>" . print_r($data, true) . "</pre>";
 }
+
+// Close cURL
 curl_close($ch);
+
+// Debugging information
+echo "<h2>Debugging Information</h2>";
+echo "<h3>String-to-Sign:</h3><pre>" . htmlspecialchars(strtolower($verb) . "\n" .
+    strtolower($resourceType) . "\n" .
+    $resourceLink . "\n" .
+    strtolower($date) . "\n\n") . "</pre>";
+echo "<h3>Authorization Header:</h3><pre>" . htmlspecialchars($authHeader) . "</pre>";
 ?>
