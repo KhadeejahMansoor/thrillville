@@ -176,7 +176,7 @@
                 <a href="shop.php">Shop</a>
             </div>
             <div class="auth-buttons">
-                <a href="login.php">Login</a>
+                <a href="loginpage.php">Login</a>
                 <a href="signup.php">Sign Up</a>
             </div>
         </header>
