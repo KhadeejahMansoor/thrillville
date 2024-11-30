@@ -1,7 +1,7 @@
 <?php
 // Cosmos DB endpoint and key
-$endpoint = "https://<your-cosmos-account>.documents.azure.com:443/";
-$primaryKey = "<your-primary-key>";
+$endpoint = "https://wonderland.documents.azure.com:443/";
+$primaryKey = "FYboYduDuC8WTxmSAX30xskFFTQSeKZYerby7hq6xY5l50E6iVEm2ZDMZoR9XVwKm5L8UTziyTfaACDbJhc1Xw==";
 $databaseId = "wonderland";
 $containerId = "table";
 
