@@ -11,7 +11,6 @@
         margin: 0;
         padding: 0;
         background-color: #add8e6; /* Light blue background */
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,8 +22,8 @@
         
         <!-- Main Content -->
         <div class="cont" style="
-            margin-top: 20px;
             text-align: center;
+            margin: 20px 0;
         ">
             <h1 style="
                 font-size: 3em;
@@ -55,8 +54,10 @@
             margin-top: 40px;
             text-align: center;
         ">
-            <div>
-                <h4>company</h4>
+            <div style="
+                margin-bottom: 20px;
+            ">
+                <h4 style="margin: 10px 0;">company</h4>
                 <ul style="
                     list-style: none;
                     padding: 0;
@@ -66,8 +67,10 @@
                     <li style="margin: 5px 0;"><a href="#" style="text-decoration: none; color: #000;">privacy policy</a></li>
                 </ul>
             </div>
-            <div>
-                <h4>get help</h4>
+            <div style="
+                margin-bottom: 20px;
+            ">
+                <h4 style="margin: 10px 0;">get help</h4>
                 <ul style="
                     list-style: none;
                     padding: 0;
@@ -77,16 +80,21 @@
                     <li style="margin: 5px 0;"><a href="checkoutpage.php" style="text-decoration: none; color: #000;">payment options</a></li>
                 </ul>
             </div>
-            <div>
+            <div style="
+                margin-bottom: 20px;
+            ">
                 <h4><a href="shop.php" style="text-decoration: none; color: #000;">online merchandise</a></h4>
             </div>
             <div class="social-links" style="
                 margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
             ">
-                <a href="#" style="margin: 0 10px; font-size: 1.2em; text-decoration: none; color: #000;">Facebook</a>
-                <a href="#" style="margin: 0 10px; font-size: 1.2em; text-decoration: none; color: #000;">Twitter</a>
-                <a href="#" style="margin: 0 10px; font-size: 1.2em; text-decoration: none; color: #000;">Instagram</a>
-                <a href="#" style="margin: 0 10px; font-size: 1.2em; text-decoration: none; color: #000;">LinkedIn</a>
+                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Facebook</a>
+                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Twitter</a>
+                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Instagram</a>
+                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">LinkedIn</a>
             </div>
         </footer>
     </body>
