@@ -3,140 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book US</title>
+    <title>Book Us</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-
-    <link type="text/css" rel="stylesheet" href="css/footer.css" />
-    <link type="text/css" rel="stylesheet" href="css/booking3.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link type="text/css" rel="stylesheet" href="css/header.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,700;1,200;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Jost", sans-serif;
+        background-color: #f0f8ff; /* Light blue background */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: #333;
+      }
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.
-4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqR
-Kc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+      #booking {
+        width: 100%;
+        max-width: 800px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
+      .booking-cta h1 {
+        font-size: 2em;
+        text-align: center;
+        color: #2185d0;
+      }
+
+      .booking-cta h1 span {
+        color: #555;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-label {
+        font-size: 0.9em;
+        margin-top: 5px;
+        color: #666;
+      }
+
+      .form-btn {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .submit-btn {
+        background-color: #2185d0;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #1673a3;
+      }
+
+      .memories {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .memories__header h2 {
+        color: #2185d0;
+      }
+
+      .memories__grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .memories__card {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 200px;
+      }
+
+      .memories__card h4 {
+        color: #2185d0;
+        margin: 10px 0;
+      }
+
+      .memories__card p {
+        color: #555;
+      }
+
+      footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #333;
+      }
+
+      footer h4 {
+        margin: 10px 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #2185d0;
+      }
+
+      footer .social-links {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      footer .social-links a {
+        color: #333;
+        font-size: 1.2em;
+        transition: color 0.3s;
+      }
+
+      footer .social-links a:hover {
+        color: #2185d0;
+      }
+    </style>
   </head>
 
   <body>
-    
     <div id="booking" class="section">
-      <?php include('header.php'); ?>
+      <?php include("header.php"); ?>
       <div class="section-center">
         <div class="container">
-          <div class="row">
-            <div class="col-md-5">
-              <div class="booking-cta">
-                <h1>BOOK WITH US YOUR <span> NEXT</span> ADVENTURE</h1>
-              </div>
-            </div>
+          <div class="booking-cta">
+            <h1>BOOK WITH US YOUR <span> NEXT</span> ADVENTURE</h1>
+          </div>
 
-            <div class="col-md-6 col-md-offset-1">
-              <div class="booking-form">
-                <form action="bookingf.php" method="post">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input class="form-control" type="text" name="name" />
-                        <span class="form-label">Name</span>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input class="form-control" type="email" name="email" />
-                        <span class="form-label">Email</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input class="form-control" type="tel" name="phone"  />
-                        <span class="form-label">Phone</span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                      <div class="form-group">
-                        <span class="form-label">Child</span>
-                        <input
-                          class="form-control"
-                          type="number"
-                          name="Child"
-                          id="childTickets"
-                          required
-                          min="0"
-                          max="20"
-                        />
-                        <span class="select-arrow"></span>
-                      </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                      <div class="form-group">
-                        <span class="form-label">Adult</span>
-                        <input
-                        name="Adult"
-                          class="form-control"
-                          type="number"
-                          id="adultTickets"
-                          required
-                          min="0"
-                          max="20"
-                        />
-                        <span class="select-arrow"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input  name="date"   class="form-control" type="date" required />
-                        <span class="form-label">Date</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-btn">
-                    <button type="Submit" class="submit-btn" onclick="addToCartAndRedirect()">
-                      Book Now
-                    </button>
-                  </div>
-                </form>
+          <div class="booking-form">
+            <form action="bookingf.php" method="post">
+              <div class="row">
+                <div>
+                  <input class="form-control" type="text" name="name" placeholder="Name" />
+                </div>
+                <div>
+                  <input class="form-control" type="email" name="email" placeholder="Email" />
+                </div>
               </div>
-            </div>
-         
+              <div class="row">
+                <div>
+                  <input class="form-control" type="tel" name="phone" placeholder="Phone" />
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="Child"
+                    id="childTickets"
+                    placeholder="Number of Children"
+                    min="0"
+                    max="20"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="form-control"
+                    type="number"
+                    name="Adult"
+                    id="adultTickets"
+                    placeholder="Number of Adults"
+                    min="0"
+                    max="20"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <input class="form-control" type="date" name="date" required />
+                </div>
+              </div>
+              <div class="form-btn">
+                <button type="submit" class="submit-btn" onclick="addToCartAndRedirect()">Book Now</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -150,7 +216,7 @@ Kc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           <div class="memories__card">
             <span><i class="ri-calendar-2-line"></i></span>
             <h4>Book & Relax</h4>
-            <p>Dont Worry About The Queues With Our Fast Track</p>
+            <p>Don't Worry About The Queues With Our Fast Track</p>
           </div>
           <div class="memories__card">
             <span><i class="ri-shield-check-line"></i></span>
@@ -160,36 +226,12 @@ Kc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           <div class="memories__card">
             <span><i class="ri-bookmark-2-line"></i></span>
             <h4>Save More</h4>
-            <p>
-              From discounted ticket prices to exclusive promotions and deals,
-              we prioritize affordability .
-            </p>
+            <p>From discounted ticket prices to exclusive promotions and deals, we prioritize affordability.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <?php include('footer.php'); ?>
-
-    <script src="js/jquery.min.js"></script>
-    <script>
-      $(".form-control").each(function () {
-        floatedLabel($(this));
-      });
-
-      $(".form-control").on("input", function () {
-        floatedLabel($(this));
-      });
-
-      function floatedLabel(input) {
-        var $field = input.closest(".form-group");
-        if (input.val()) {
-          $field.addClass("input-not-empty");
-        } else {
-          $field.removeClass("input-not-empty");
-        }
-      }
-    </script>
-    
+    <?php include("footer.php"); ?>
   </body>
 </html>
