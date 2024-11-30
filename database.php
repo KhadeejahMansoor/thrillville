@@ -19,7 +19,7 @@ function generateAuthHeader($verb, $resourceType, $resourceLink, $date, $masterK
 
 // Cosmos DB configuration
 $endpoint = "https://<your-account>.documents.azure.com:443/"; // Replace with your Cosmos DB endpoint
-$primaryKey = "<your-primary-key>"; // Replace with your primary key
+$primaryKey = "FYboYduDuC8WTxmSAX30xskFFTQSeKZYerby7hq6xY5l50E6iVEm2ZDMZoR9XVwKm5L8UTziyTfaACDbJhc1Xw=="; // Replace with your primary key
 $databaseId = "wonderland";
 $containerId = "table";
 
