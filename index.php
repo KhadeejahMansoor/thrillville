@@ -26,6 +26,7 @@
                 width: 100%;
                 padding: 20px;
                 text-align: center;
+                position: relative;
             }
 
             header .name {
@@ -48,6 +49,28 @@
 
             header .items a:hover {
                 color: #ffeb3b; /* Yellow hover */
+            }
+
+            /* Login and Sign-up buttons */
+            header .auth-buttons {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            header .auth-buttons a {
+                text-decoration: none;
+                color: white;
+                background-color: #ff9800; /* Orange */
+                padding: 10px 20px;
+                margin-left: 10px;
+                border-radius: 5px;
+                font-size: 1em;
+                transition: background-color 0.3s;
+            }
+
+            header .auth-buttons a:hover {
+                background-color: #e65100; /* Darker orange */
             }
 
             /* Main Content */
@@ -151,6 +174,10 @@
                 <a href="booking3.php">Booking</a>
                 <a href="rides.php">Attractions</a>
                 <a href="shop.php">Shop</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.php">Login</a>
+                <a href="signup.php">Sign Up</a>
             </div>
         </header>
         
