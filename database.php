@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
+// Function to get the Authorization header for Cosmos DB requests
 function getAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey) {
     $key = base64_decode($masterKey);
     $stringToSign = strtolower($verb) . "\n" .
@@ -21,7 +22,7 @@ function getAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey) {
 $uri = "https://wonderland.documents.azure.com:443/";
 $masterKey = "FYboYduDuC8WTxmSAX30xskFFTQSeKZYerby7hq6xY5l50E6iVEm2ZDMZoR9XVwKm5L8UTziyTfaACDbJhc1Xw==";
 $databaseId = "wonderland";
-$collectionId = "tables";
+$collectionId = "table";
 
 $client = new Client([
     'base_uri' => $uri,
@@ -62,3 +63,41 @@ try {
 } catch (Exception $e) {
     echo 'Error: ' . $e->getMessage();
 }
+
+// Function to insert a document into Cosmos DB
+function insertDocument($client, $databaseId, $collectionId, $masterKey, $document) {
+    $verb = 'POST';
+    $resourceType = 'docs';
+    $resourceLink = "dbs/{$databaseId}/colls/{$collectionId}";
+    $date = gmdate('D, d M Y H:i:s T');
+
+    $authHeader = getAuthHeader($verb, $resourceType, $resourceLink, $date, $masterKey);
+
+    try {
+        $response = $client->request($verb, $resourceLink, [
+            'headers' => [
+                'Authorization' => $authHeader,
+                'x-ms-date' => $date,
+                'Content-Type' => 'application/json',
+            ],
+            'body' => json_encode($document),
+        ]);
+
+        echo "Document inserted: " . $response->getBody() . "\n";
+    } catch (Exception $e) {
+        echo 'Error inserting document: ' . $e->getMessage() . "\n";
+    }
+}
+
+// Document to insert
+$document = [
+    'id' => 'unique-id-123', // Unique ID for the document
+    'name' => 'Example Name',
+    'property' => 'some-value',
+    'additional_field' => 'example-data'
+];
+
+// Insert the document
+insertDocument($client, $databaseId, $collectionId, $masterKey, $document);
+
+?>
