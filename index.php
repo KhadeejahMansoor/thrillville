@@ -5,96 +5,188 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>THRILLVILLE</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    </head>
-    <body style="
-        font-family: 'Jost', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #add8e6; /* Light blue background */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-    ">
-        <!-- Header -->
-        <?php include('header.php'); ?>
-        
-        <!-- Main Content -->
-        <div class="cont" style="
-            text-align: center;
-            margin: 20px 0;
-        ">
-            <h1 style="
-                font-size: 3em;
-                font-weight: bold;
-                color: #000;
-            ">WORLD'S NO 1</h1>
-            <h2 style="
-                font-size: 2em;
-                color: #555;
-                margin: 10px 0;
-            ">FUN GALA</h2>
-            <a href="booking3.php">
-                <button style="
-                    background-color: #2185d0;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    font-size: 1.2em;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    margin-top: 20px;
-                ">BOOK ME</button>
-            </a>
-        </div>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            /* General styles */
+            body {
+                font-family: 'Jost', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #e3f2fd; /* Light sky blue */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
 
-        <!-- Footer -->
-        <footer style="
-            margin-top: 40px;
-            text-align: center;
-        ">
-            <div style="
-                margin-bottom: 20px;
-            ">
-                <h4 style="margin: 10px 0;">company</h4>
-                <ul style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                ">
-                    <li style="margin: 5px 0;"><a href="aboutus.php" style="text-decoration: none; color: #000;">about us</a></li>
-                    <li style="margin: 5px 0;"><a href="#" style="text-decoration: none; color: #000;">privacy policy</a></li>
-                </ul>
-            </div>
-            <div style="
-                margin-bottom: 20px;
-            ">
-                <h4 style="margin: 10px 0;">get help</h4>
-                <ul style="
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                ">
-                    <li style="margin: 5px 0;"><a href="contactus.php" style="text-decoration: none; color: #000;">FAQ</a></li>
-                    <li style="margin: 5px 0;"><a href="checkoutpage.php" style="text-decoration: none; color: #000;">payment options</a></li>
-                </ul>
-            </div>
-            <div style="
-                margin-bottom: 20px;
-            ">
-                <h4><a href="shop.php" style="text-decoration: none; color: #000;">online merchandise</a></h4>
-            </div>
-            <div class="social-links" style="
+            /* Header */
+            header {
+                background-color: #1976d2; /* Deep blue */
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+            }
+
+            header .name {
+                font-size: 2.5em;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+            }
+
+            header .items {
+                margin-top: 10px;
+            }
+
+            header .items a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: white;
+                font-size: 1.2em;
+            }
+
+            header .items a:hover {
+                color: #ffeb3b; /* Yellow hover */
+            }
+
+            /* Main Content */
+            .cont {
+                text-align: center;
+                margin: 30px 0;
+            }
+
+            .cont h1 {
+                font-size: 3.5em;
+                font-weight: bold;
+                color: #0d47a1; /* Darker blue */
+            }
+
+            .cont h2 {
+                font-size: 2.5em;
+                color: #455a64; /* Slate gray */
+                margin: 10px 0;
+            }
+
+            .cont button {
+                background-color: #ff9800; /* Orange */
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                font-size: 1.5em;
+                border-radius: 10px;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: transform 0.3s, background-color 0.3s;
+            }
+
+            .cont button:hover {
+                background-color: #e65100; /* Darker orange */
+                transform: scale(1.1);
+            }
+
+            /* Footer */
+            footer {
+                margin-top: 40px;
+                text-align: center;
+                padding: 20px;
+                background-color: #1976d2; /* Deep blue */
+                color: white;
+                width: 100%;
+            }
+
+            footer h4 {
+                margin: 10px 0;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            footer ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            footer ul li {
+                margin: 5px 0;
+            }
+
+            footer ul li a {
+                text-decoration: none;
+                color: white;
+                font-size: 1em;
+            }
+
+            footer ul li a:hover {
+                color: #ffeb3b; /* Yellow hover */
+            }
+
+            footer .social-links {
                 margin-top: 20px;
                 display: flex;
                 justify-content: center;
                 gap: 15px;
-            ">
-                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Facebook</a>
-                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Twitter</a>
-                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">Instagram</a>
-                <a href="#" style="font-size: 1.5em; text-decoration: none; color: #000;">LinkedIn</a>
+            }
+
+            footer .social-links a {
+                font-size: 1.8em;
+                text-decoration: none;
+                color: white;
+                transition: transform 0.3s, color 0.3s;
+            }
+
+            footer .social-links a:hover {
+                color: #ffeb3b; /* Yellow */
+                transform: scale(1.2);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <a href="land.php" class="name">WONDERLAND</a>
+            <div class="items">
+                <a href="index.php">Home</a>
+                <a href="aboutus.php">About</a>
+                <a href="booking3.php">Booking</a>
+                <a href="rides.php">Attractions</a>
+                <a href="shop.php">Shop</a>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="cont">
+            <h1>WORLD'S NO 1</h1>
+            <h2>FUN GALA</h2>
+            <a href="booking3.php">
+                <button>BOOK ME</button>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div>
+                <h4>company</h4>
+                <ul>
+                    <li><a href="aboutus.php">about us</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>get help</h4>
+                <ul>
+                    <li><a href="contactus.php">FAQ</a></li>
+                    <li><a href="checkoutpage.php">payment options</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4><a href="shop.php">online merchandise</a></h4>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
         </footer>
     </body>
